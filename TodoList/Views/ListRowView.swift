@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ListRowView: View {
-    
     let item: ItemModel
     
     var body: some View {

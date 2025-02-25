@@ -13,8 +13,13 @@ struct ListView: View {
     
     var body: some View {
         List {
-            ForEach(listViewModel.items) {
-                ListRowView(item: $0)
+            ForEach(listViewModel.items) { item in
+                ListRowView(item: item)
+                    .onTapGesture {
+                        withAnimation(.linear) {
+                            listViewModel.updateItem(item: item) // check the completion of todo item
+                        }
+                    }
             }
             .onDelete(perform: listViewModel.deleteItem)
             .onMove(perform: listViewModel.moveItem)
