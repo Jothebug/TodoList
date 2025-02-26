@@ -43,7 +43,7 @@ struct AddView: View {
     func saveButtonPressed() {
         if (textIsAppropriate()) {
             listViewModel.addItem(title: textFieldText)
-            presentationMode.wrappedValue.dismiss() // auto go back in the last screen
+            presentationMode.wrappedValue.dismiss() // auto go back into the last screen
         }
     }
     
