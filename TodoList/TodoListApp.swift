@@ -25,6 +25,7 @@ struct TodoListApp: App {
             NavigationView {
                 ListView()
             }
+            .navigationViewStyle(StackNavigationViewStyle()) // must add this style because ipad has a different default style for navigation
             .environmentObject(listViewModel)
         }
     }

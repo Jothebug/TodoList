@@ -39,6 +39,7 @@ struct NoItemsView: View {
                 .scaleEffect(animate ? 1.1 : 1.0)
                 .offset(y: animate ? -7 : 0)
             }
+            .frame(maxWidth: 400) //  set maxWidth 400 to prevent the UI spread when rotate screen
             .multilineTextAlignment(.center)
             .padding(40)
             .onAppear(perform: addAnimation)
@@ -52,7 +53,8 @@ struct NoItemsView: View {
             withAnimation(
                 Animation
                     .easeInOut(duration: 2.0)
-                    .repeatForever()) {
+                    .repeatForever()
+            ) {
                 animate.toggle()
             }
         }
